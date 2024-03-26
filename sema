@@ -1,0 +1,74 @@
+// C++ code
+//
+const int LED_VERMELHO = 13;
+const int LED_AMARELO = 12;
+const int LED_VERDE = 11;
+const int LEDP_VERMELHO = 10;
+const int LEDP_VERDE = 8;
+const int BOTAO = 7;
+	void setup()
+	{
+  	pinMode(LED_VERMELHO, OUTPUT);
+  	pinMode(LED_AMARELO, OUTPUT);
+  	pinMode(LED_VERDE, OUTPUT);
+  	pinMode(LEDP_VERMELHO, OUTPUT);
+  	pinMode(LEDP_VERDE, OUTPUT);
+  	pinMode(BOTAO, INPUT);
+	}
+
+	void loop()
+	{
+      int estado_botao=0;
+      estado_botao=digitalRead(BOTAO);
+      
+      digitalWrite(LED_AMARELO,LOW);
+      digitalWrite(LED_VERMELHO,LOW);
+      digitalWrite(LED_VERDE,HIGH);
+      digitalWrite(LEDP_VERMELHO,HIGH);
+      digitalWrite(LEDP_VERDE, LOW);
+      delay(3000);
+      
+      estado_botao=digitalRead(BOTAO);
+      
+      digitalWrite(LED_AMARELO,HIGH);
+      digitalWrite(LED_VERMELHO,LOW);
+      digitalWrite(LED_VERDE,LOW);
+      digitalWrite(LEDP_VERMELHO,HIGH);
+      digitalWrite(LEDP_VERDE, LOW);
+      delay(2000);
+      
+      digitalWrite(LED_AMARELO,LOW);
+      digitalWrite(LED_VERMELHO,HIGH);
+      digitalWrite(LED_VERDE,LOW);
+      digitalWrite(LEDP_VERMELHO,LOW);
+      for(int x=0; x<10; x++){
+        delay(250);
+      digitalWrite(LEDP_VERDE, HIGH);
+        delay(250);
+      digitalWrite(LEDP_VERDE, LOW);
+
+          
+      }
+      digitalWrite(LEDP_VERDE, HIGH);
+
+      delay(5000);
+	
+if (estado_botao == HIGH && LED_VERDE==HIGH)
+	{   
+      digitalWrite(LED_AMARELO,HIGH);
+      digitalWrite(LED_VERMELHO,LOW);
+      digitalWrite(LED_VERDE,LOW);
+      digitalWrite(LEDP_VERMELHO,HIGH);
+      digitalWrite(LEDP_VERDE, LOW);
+      delay(2000);
+      digitalWrite(LED_VERDE,LOW);
+      digitalWrite(LED_AMARELO,LOW);
+      digitalWrite(LED_VERMELHO,HIGH);
+      digitalWrite(LEDP_VERMELHO,LOW);
+      digitalWrite(LEDP_VERDE, HIGH);
+      delay(5000);
+    }
+      
+    }
+
+          
